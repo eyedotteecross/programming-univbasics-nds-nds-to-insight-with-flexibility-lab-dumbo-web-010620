@@ -106,7 +106,7 @@ def movies_with_directors_set(source)
   j += 1
   end 
   directors_a_o_a
-  binding.pry
+  #binding.pry
 end
 
 # ----------------    End of Your Code Region --------------------
