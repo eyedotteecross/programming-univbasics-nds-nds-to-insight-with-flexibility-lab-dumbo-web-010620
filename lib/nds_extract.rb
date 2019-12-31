@@ -98,7 +98,9 @@ def movies_with_directors_set(source)
   # to have a :director_name key added to it.
   j=0
   directors_a_o_a = []
-  while j < source.size  
+  while j < source.size do 
+    
+  end 
   binding.pry
 end
 
