@@ -61,25 +61,29 @@ end
 
 
 def gross_per_studio(collection)
-  # GOAL: Given an Array of Hashes where each Hash represents a movie,
-  # return a Hash that includes the total worldwide_gross of all the movies from
-  # each studio.
+  # GOAL: Transform NDS'
   #
   # INPUT:
   # * collection: Array of Hashes where each Hash where each Hash represents a movie
   #
   # RETURN:
   #
-  # Hash whose keys are the studio names and whose values are the sum
-  # total of all the worldwide_gross numbers for every movie in the input Hash
+  # * Hash whose keys are the studio names and whose values are the sum
+  #   total of all the worldwide_gross numbers for every movie in the input Hash
   result = {}
-  a = 0 
-  while a < collection.size do
-    if !collection[:studio]
-    result << collection[a][:studio]
+  i = 0
+
+  while i < collection.length do
+    movie = collection[i]
+
+    if !result[movie[:studio]]
+      result[movie[:studio]] = movie[:worldwide_gross]
+    else
+      result[movie[:studio]] += movie[:worldwide_gross]
+    end
+    i += 1
+    binding.pry
   end
-  binding.pry
-end
 
 def movies_with_directors_set(source)
   # GOAL: For each director, find their :movies Array and stick it in a new Array
