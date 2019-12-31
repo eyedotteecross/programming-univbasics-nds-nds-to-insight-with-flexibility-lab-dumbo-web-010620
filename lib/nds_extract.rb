@@ -99,8 +99,13 @@ def movies_with_directors_set(source)
   j=0
   directors_a_o_a = []
   while j < source.size do 
-  dir_info = source[j]  
+  dir_info = source[j]
+  dir_name = source[j][:name]
+  dir_movies = source[j][:movies]
+  directors_a_o_a << movies_with_director_key(dir_name,dir_movies)
+  j += 1
   end 
+  directors_a_o_a
   binding.pry
 end
 
