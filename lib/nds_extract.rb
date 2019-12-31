@@ -74,7 +74,8 @@ def gross_per_studio(collection)
   # total of all the worldwide_gross numbers for every movie in the input Hash
   result = {}
   a = 0 
-  while a < collection.size do 
+  while a < collection.size do
+    if !collection[:studio]
     result << collection[a][:studio]
   end
   binding.pry
